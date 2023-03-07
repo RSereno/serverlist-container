@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  bedrockconnect:
+    container_name: BedrockConnect-ServerList
+    image: digitaldragon/bedrockconnectserver
+    environment:
+      - featured_servers=${FEATURED_SERVERS:-false}
+      - allowUIServerManagement=${ALLOW_UI_SERVER_MANAGEMENT:-false}
+    ports:
+      - "19132:19132/udp"
+    volumes:
+      - bedrockconnect-config:/app/config
+    restart: unless-stopped
+
+volumes:
+  bedrockconnect-config:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./config

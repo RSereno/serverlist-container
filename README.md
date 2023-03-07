@@ -1,3 +1,3 @@
 # serverlist-container
 
-Simple container for https://github.com/Pugmatt/BedrockConnect
+Simple docker container for https://github.com/Pugmatt/BedrockConnect

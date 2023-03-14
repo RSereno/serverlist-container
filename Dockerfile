@@ -28,4 +28,4 @@ RUN apk add --no-cache curl && \
 EXPOSE 19132/udp
 
 # Set the entrypoint
-ENTRYPOINT ["sh", "-c", "echo \"[$(date)] Starting  $CONTAINER_NAME container with the following variables:\" && echo \"useDB=$useDB\" && echo \"featured_servers=$featured_servers\" && echo \"allowUIServerManagement=false\n\n\" && java -Xms512M -Xmx512M -jar BedrockConnect.jar nodb=true && echo \"\")\" user_servers=false custom_servers=/app/config/custom_servers.json language=/app/config/servername.json featured_servers=$featured_servers && echo BedrockConnect container stopped."]
+ENTRYPOINT ["sh", "-c", "echo \"[$(date)] Starting  $CONTAINER_NAME container with the following variables:\" && echo \"useDB=$useDB\" && echo \"featured_servers=$featured_servers\" && echo \"allowUIServerManagement=false\n\n\" && java -Xms512M -Xmx512M -jar BedrockConnect.jar nodb=true && echo \"\")\" user_servers=false custom_servers=/app/config/custom_servers.json language=/app/config/servertext_en.json featured_servers=$featured_servers && echo BedrockConnect container stopped."]

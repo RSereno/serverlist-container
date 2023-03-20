@@ -1,6 +1,7 @@
 name: Build and push Docker image to GitHub Packages
 
 on:
+  workflow_dispatch: # allows manual triggering
   push:
     branches:
       - main

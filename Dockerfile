@@ -10,7 +10,7 @@ ENV BEDROCKCONNECT_VERSION=latest
 WORKDIR /app
 
 # Copy the BedrockConnect jar and configuration files
-COPY ./custom_servers.json ./servertext_en.json ./config/
+COPY ./config/custom_servers.json ./config/servertext_en.json ./config/
 
 RUN apk add --no-cache wget
 

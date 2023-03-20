@@ -34,4 +34,4 @@ jobs:
         context: .
         file: ${{ env.DOCKERFILE_PATH }}
         push: true
-        tags: ghcr.io/${{ github.repository }}/${{ env.IMAGE_NAME }}:latest, ghcr.io/${{ github.repository }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+        tags: ghcr.io/rsereno/${{ env.IMAGE_NAME }}:latest, ghcr.io/rsereno/${{ env.IMAGE_NAME }}:${{ github.sha }}

@@ -37,7 +37,7 @@ WORKDIR /app
 COPY ./config/custom_servers.json ./config/servertext_en.json ./config/
 
 # Copy the jar file from the build stage
-COPY --from=build /app/BedrockConnect/target/bedrock-connect.jar .
+COPY --from=build /app/BedrockConnect/serverlist-server/target/BedrockConnect-1.0-SNAPSHOT.jar .
 
 
 # Expose the BedrockConnect port

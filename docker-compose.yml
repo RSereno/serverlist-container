@@ -11,6 +11,7 @@ services:
       - "19132:19132/udp"
     volumes:
       - bedrockconnect-config:/app/config
+      - /app:/app
     restart: unless-stopped
 
 volumes:

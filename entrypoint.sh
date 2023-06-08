@@ -3,6 +3,7 @@
 RUN apt-get update && apt-get install -y curl
 # Get the current version of BedrockConnect
 CURRENT_VERSION=$(unzip -p  BedrockConnect-*.jar META-INF/MANIFEST.MF | grep Implementation-Version)
+ echo "Current version of BedrockConnect $CURRENT_VERSION"
 
 # Get the latest version of BedrockConnect from GitHub
 LATEST_VERSION=$(curl -sX GET "https://api.github.com/repos/Pugmatt/BedrockConnect/releases/latest" | grep tag_name | cut -d '"' -f 4)

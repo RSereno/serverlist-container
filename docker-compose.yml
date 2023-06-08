@@ -2,8 +2,8 @@ version: '3'
 
 services:
   bedrockconnect:
-    container_name: BedrockConnect-ServerList
-    image: digitaldragon/bedrockconnectserver
+    container_name: DigitalConnect-ServerList
+    image:  ghcr.io/rsereno/bedrockconnectserver
     environment:
       - featured_servers=${FEATURED_SERVERS:-false}
       - allowUIServerManagement=${ALLOW_UI_SERVER_MANAGEMENT:-false}
@@ -12,6 +12,7 @@ services:
     volumes:
       - bedrockconnect-config:/app/config
     restart: unless-stopped
+    
 
 volumes:
   bedrockconnect-config:

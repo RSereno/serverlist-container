@@ -11,14 +11,14 @@ WORKDIR /app/BedrockConnect/serverlist-server
 # Build the jar file
 RUN mvn clean package -Djar.name=bedrock-connect.jar
 
-# Show Version
+# Show Version - Nice to have future release
 # Install curl
-RUN apt-get update && apt-get install -y curl
+# RUN apt-get update && apt-get install -y curl
 
 # Use curl to fetch the latest version
-RUN VERSION=$(curl -sX GET "https://api.github.com/repos/RSereno/BedrockConnect/releases/latest" \
-        | awk '/tag_name/{print $4;exit}' FS='[""]') \
-    && echo "Version build of BedrockConnect: $VERSION"
+# RUN VERSION=$(curl -sX GET "https://api.github.com/repos/RSereno/BedrockConnect/releases/latest" \
+#         | awk '/tag_name/{print $4;exit}' FS='[""]') \
+#     && echo "Version build of BedrockConnect: $VERSION"
 
 #
 # Stage 2: Execution stage

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Get the current version of BedrockConnect
-CURRENT_VERSION=$(java -jar BedrockConnect-*.jar --version | awk '{print $2}')
+CURRENT_VERSION=$(unzip -p  BedrockConnect-*.jar META-INF/MANIFEST.MF | grep Implementation-Version)
 
 # Get the latest version of BedrockConnect from GitHub
 LATEST_VERSION=$(curl -sX GET "https://api.github.com/repos/Pugmatt/BedrockConnect/releases/latest" | grep tag_name | cut -d '"' -f 4)

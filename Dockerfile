@@ -12,11 +12,13 @@ WORKDIR /app/BedrockConnect/serverlist-server
 RUN mvn clean package -Djar.name=bedrock-connect.jar
 
 # Show Version
-RUN apk add --no-cache curl && \
-   BEDROCKCONNECT_VERSION=$(curl -sX GET "https://api.github.com/repos/RSereno/BedrockConnect/releases/latest" \
-        | awk '/tag_name/{print $4;exit}' FS='[""]') && \
-        echo "Version build of BedrockConnect: $BEDROCKCONNECT_VERSION"; \
-apk del curl
+# Install curl
+RUN apt-get update && apt-get install -y curl
+
+# Use curl to fetch the latest version
+RUN VERSION=$(curl -sX GET "https://api.github.com/repos/RSereno/BedrockConnect/releases/latest" \
+        | awk '/tag_name/{print $4;exit}' FS='[""]') \
+    && echo "Version build of BedrockConnect: $VERSION"
 
 #
 # Stage 2: Execution stage

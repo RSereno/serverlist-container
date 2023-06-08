@@ -7,7 +7,7 @@ WORKDIR /app
 # Clone the source code from GitHub
 RUN git clone https://github.com/RSereno/BedrockConnect.git
 # Change to the cloned directory
-WORKDIR /app/BedrockConnect
+WORKDIR /app/BedrockConnect/serverlist-server
 # Build the jar file
 RUN mvn clean package -Djar.name=bedrock-connect.jar
 
